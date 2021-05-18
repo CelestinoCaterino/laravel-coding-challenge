@@ -3,6 +3,11 @@
 @section('content')
 <div class="container mt-5">
     <h1>Clients</h1>
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
     <div class="d-flex justify-content-end mb-2">
         <a href="{{route('clients.create')}}" class="btn btn-primary">Add new</a>
     </div>
