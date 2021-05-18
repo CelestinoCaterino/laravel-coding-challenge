@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Http\Requests\StoreClientRequest;
+use Illuminate\Support\Facades\Log;
 
 class ClientController extends Controller
 {
@@ -40,6 +41,7 @@ class ClientController extends Controller
         $client = new Client();
         $client->fill($request->all());
         $client->save();
+        Log::info('A new user has been created with id: '. $client->id);
         return redirect()->route('clients.index')->withSuccess('Client created successfully');
     }
 
@@ -52,6 +54,7 @@ class ClientController extends Controller
     public function show($id)
     {
         $client = Client::findOrFail($id);
+        Log::info('Showing the client detail with id: '.$id);
         return view('clients.show')->with('client', $client);
     }
 }
