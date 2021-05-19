@@ -12,7 +12,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{route('clients.store')}}" method="post">
+    <form action="{{route('clients.store')}}" method="post" id="create_client_form">
         @csrf
         <div class="form-group">
             <label for="first_name">First name</label>
@@ -66,5 +66,71 @@
         </div>
     </form>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    $(function(){
+        jQuery.validator.setDefaults({
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+
+        jQuery("#create_client_form").validate(
+            {
+                rules: {
+                    first_name: {
+                        required: true,
+                        maxlength: 255
+                    },
+                    last_name: {
+                        required: true,
+                        maxlength: 255
+                    },
+                    email: {
+                        required: true,
+                        email: true,
+                        maxlength: 255
+                    },
+                    phone_number: {
+                        required: true
+                    },
+                    date_of_birth: {
+                        required: true,
+                        date: true
+                    },
+                    gender: {
+                        required: true,
+                    },
+                    address: {
+                        required: true,
+                        maxlength: 255
+                    },
+                    nationality: {
+                        required: true,
+                        maxlength: 255 
+                    },
+                    education_background: {
+                        required: true,
+                        maxlength: 255
+                    },
+                    preferred_contact_method:{
+                        required: true,
+                    }
+                }
+            }
+        );
+
+    })
+</script>
 @endsection
 
