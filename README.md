@@ -37,7 +37,7 @@ The challenge requires developing a small CRUD part for the Clients section of a
         docker exec -ti your_container php artisan migrate
         docker exec -ti your_container php artisan db:seed
 
-**3.**  Generate an app key.
+**4.**  Generate an app key.
 
         docker exec -ti your_container  php artisan key:generate
 
