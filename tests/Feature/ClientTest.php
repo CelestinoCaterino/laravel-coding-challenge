@@ -9,7 +9,7 @@ class ClientTest extends TestCase
     /**
      * @return void
      */
-    public function testIndexReturnStatus200() 
+    public function testIndexReturnStatus200()
     {
         $response = $this->get('clients');
         $response->assertStatus(200);
@@ -27,7 +27,7 @@ class ClientTest extends TestCase
     /**
      * @return void
      */
-    public function testShowReturnStatus200() 
+    public function testShowReturnStatus200()
     {
         $client = \App\Models\Client::first();
         $response = $this->get('clients/'.$client->id);
@@ -47,7 +47,7 @@ class ClientTest extends TestCase
     /**
      * @return void
      */
-    public function testCreateReturnStatus200() 
+    public function testCreateReturnStatus200()
     {
         $response = $this->get('clients/create');
         $response->assertStatus(200);
