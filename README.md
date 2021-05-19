@@ -19,6 +19,10 @@ The challenge requires developing a small CRUD part for the Clients section of a
 
         php artisan migrate
         php artisan db:seed
+
+**5.** Generate an app key.
+
+        php artisan key:generate
         
 ## Using docker :whale2:
 
@@ -32,6 +36,10 @@ The challenge requires developing a small CRUD part for the Clients section of a
 
         docker exec -ti your_container php artisan migrate
         docker exec -ti your_container php artisan db:seed
+
+**3.**  Generate an app key.
+
+        docker exec -ti your_container  php artisan key:generate
 
 
  Now you can run your application in localhost :rocket:
