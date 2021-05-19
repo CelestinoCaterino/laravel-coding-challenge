@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class ClientFactory extends Factory
 {
@@ -35,5 +34,4 @@ class ClientFactory extends Factory
             'preferred_contact_method' => $this->faker->randomElement(['email', 'phone_number', 'none']),
         ];
     }
-
 }
