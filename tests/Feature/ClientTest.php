@@ -62,6 +62,5 @@ class ClientTest extends TestCase
         $this->post('clients/create', $client->toArray());
         $response = $this->get('clients/'.$client->id);
         $response->assertStatus(200);
-
     }
 }
