@@ -29,7 +29,7 @@ class StoreClientRequest extends FormRequest
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'gender' => 'required|in:male,female',
-            'phone_number' => 'required|regex:#^\+[1-9]\d{1,14}$#',
+            'phone_number' => 'required|regex:#^\+?[0-9]+(\([0-9]+\))?[0-9-]*[0-9]$#',
             'email' => 'required|email|unique:clients',
             'address' => 'required|max:255',
             'nationality' => 'required|max:255',
