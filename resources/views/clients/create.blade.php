@@ -85,6 +85,17 @@
             }
         });
 
+        jQuery.validator.addMethod(
+            "regex",
+            function(value, element, regexp) {
+                if (regexp.constructor != RegExp)
+                    regexp = new RegExp(regexp);
+                else if (regexp.global)
+                    regexp.lastIndex = 0;
+                    return this.optional(element) || regexp.test(value);
+            },"Insert a valid phone number format"
+        );
+
         jQuery("#create_client_form").validate(
             {
                 rules: {
@@ -102,6 +113,7 @@
                         maxlength: 255
                     },
                     phone_number: {
+                        regex: "^\\+?[0-9]+(\\([0-9]+\\))?[0-9-]*[0-9]$",
                         required: true
                     },
                     date_of_birth: {
@@ -133,4 +145,3 @@
     })
 </script>
 @endsection
-
