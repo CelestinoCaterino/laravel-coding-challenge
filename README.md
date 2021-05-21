@@ -1,4 +1,4 @@
-# Laravel coding challenge :zap:
+# Laravel coding challenge - Coding interview  :zap:
 
 The challenge requires developing a small CRUD part for the Clients section of a Laravel application.
 
